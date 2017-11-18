@@ -1,9 +1,9 @@
-var convertQuote = function (post){
+var encodeQuote = function (post){
+    post.link = encodeURI(post.link + " -" + post.title);
     post.content = post.content.replace(/(<([^>]+)>)/ig, "");
-    post.link = post.content.replace(/&#'(\d+);/g, function(m, n) {
+    post.link = post.content.replace(/&#(\d+);/g, function(m, n) {
         return String.fromCharCode(n);
-    });
-    post.link = encodeURI(post.content + " -" + post.title);
+    });    
     return post;
 }
 
@@ -12,7 +12,7 @@ $(document).ready(function() {
     $('#getQuote').on('click', function() {
         $.getJSON("https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1", function(data) {
             var post = data.shift();
-            post = convertQuote(post);
+            post = encodeQuote(post);
             var author = post.title;
             var quote = post.content;
             
