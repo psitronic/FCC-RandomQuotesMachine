@@ -1,9 +1,9 @@
 var encodeQuote = function (post){
-    post.link = encodeURI(post.link + " -" + post.title);
     post.content = post.content.replace(/(<([^>]+)>)/ig, "");
     post.link = post.content.replace(/&#(\d+);/g, function(m, n) {
         return String.fromCharCode(n);
     });    
+    post.link = encodeURIComponent(post.link + " -" + post.title);
     return post;
 }
 
