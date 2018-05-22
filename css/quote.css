@@ -1,23 +1,24 @@
 body{
-	background-color: lightBlue;
+	background-color: #E0FFFF;
 	margin: 0;
 	font-size: 24px;
+	font-family: "Noticia Text";
 }
 
 #quote-content{
-	font-family: "Noticia Text";
-	font-size: 120%;
+	/*font-family: "Noticia Text";*/
+	font-size: 150%;
 	font-weight: 700;
 	text-align: center;
 	height: 250px;
 	margin: auto;
 }
 
-#quote-content:first-letter{
+/*#quote-content:first-letter{
 	color: red;
 	font-size: 230%;
 }
-
+*/
 .container-fluid{
 	width: 80%;
 	max-width: 900px;
@@ -54,9 +55,9 @@ body{
 	border: 0.5px solid red;
 	background: none;
 	outline: none;
-    -webkit-transform: scale(1.3);
-    -ms-transform: scale(1.3);
-    transform: scale(1.3);
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
 }
 
 .btn-default:focus{
